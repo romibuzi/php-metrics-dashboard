@@ -3,6 +3,8 @@ PhpMetrics Dashboard
 
 Continuously generate PhpMetrics reports (https://github.com/Halleck45/PhpMetrics) for your projects and display them via a web interface.
 
+[![Build Status](https://travis-ci.org/Romibuzi/php-metrics-dashboard.svg?branch=master)](https://travis-ci.org/Romibuzi/php-metrics-dashboard)
+
 Getting started
 -----
 
