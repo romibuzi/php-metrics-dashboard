@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <h1>PhpMetrics-Dashboard</h1>
+
+    <h2>List of reports for the project {{ project }} :</h2>
+    <ul>
+        {% for report_date in reports %}
+            <li>
+                <a href="{{ app.url_generator.generate('project_report', {'project': project, 'report': report_date|date('d-m-Y')}) }}">
+                    {{ report_date|date('d-m-Y') }} ({{ report_date|date('j F Y') }})
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ app.url_generator.generate('index') }}">
+        Back to the list of projects
+    </a>
+{% endblock %}

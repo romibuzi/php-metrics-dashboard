@@ -1,0 +1,23 @@
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "twig/twig": "~1.8",
+        "monolog/monolog": "~1.12",
+        "symfony/console": "~2.6",
+        "symfony/filesystem": "~2.6",
+        "symfony/finder": "~2.6",
+        "symfony/process": "~2.6",
+        "cpliakas/git-wrapper": "~1.4"
+    },
+    "require-dev": {
+        "symfony/browser-kit": "~2.6",
+        "behat/behat": "~3.0@stable",
+        "phpunit/phpunit": "~4.4"
+    },
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "psr-0": {"Rmb": "src/"}
+    }
+}

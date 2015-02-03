@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+            <h1>PhpMetrics-Dashboard</h1>
+        </div>
+
+        <div class="pure-u-1-1">
+            <h2>List of your scanned projects :</h2>
+            <ul>
+            {% for project in projects %}
+                <li>
+                    <a href="{{ app.url_generator.generate('project_reports_list', {'project': project.getRelativePathname()}) }}">
+                        {{ project.getRelativePathname() }}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

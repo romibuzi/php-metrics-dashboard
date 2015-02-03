@@ -1,0 +1,10 @@
+{
+    "sf-bootstrap": {
+        "url": "git@github.com:Romibuzi/sf-bootstrap.git",
+        "excluded-dirs": ["app", "vendor"]
+    },
+    "projetSNCF": {
+        "url": "git@github.com:BuZzi/projetSNCF.git",
+        "excluded-dirs": ["app", "vendor"]
+    }
+}

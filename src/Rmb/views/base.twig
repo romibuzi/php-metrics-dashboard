@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <title>PhpMetrics-Dashboard</title>
+    {% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ app.request.basepath }}/css/styles.css"/>
+    {% endblock %}
+</head>
+<body>
+<div id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

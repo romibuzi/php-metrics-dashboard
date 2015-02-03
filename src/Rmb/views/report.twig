@@ -1,0 +1,19 @@
+<style type="text/css">
+    #header {
+        background-color: lightgrey;
+        padding-bottom: 10px;
+    }
+    #header a {
+        color: rgb(75, 75, 75);
+        text-decoration: underline;
+    }
+</style>
+
+<div id="header">
+    <h1>PhpMetrics-Dashboard</h1>
+    <a href="{{ app.url_generator.generate('project_reports_list', {'project': project}) }}">
+        Back to other reports of {{ project }}
+    </a>
+</div>
+
+{{ report|raw }}
