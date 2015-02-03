@@ -2,7 +2,9 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-if (! empty($env = getenv('ENV'))) {
+$env = getenv('ENV');
+
+if (! empty($env)) {
     $config = require __DIR__  . '/config_' . $env . '.php';
 } else {
     $config = require __DIR__  . '/config.php';
