@@ -147,4 +147,14 @@ class FeatureContext implements Context
     {
         Assert::assertContains($content, $this->client->getResponse()->getContent());
     }
+
+    /**
+     * @Given The reponse should contains a report link for the actual date
+     */
+    public function responseShouldContainsAReportForTheActualDate()
+    {
+        $date = (new \DateTime('now'))->format('d-m-Y');
+
+        Assert::assertContains($date, $this->client->getResponse()->getContent());
+    }
 }

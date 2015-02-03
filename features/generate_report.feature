@@ -19,6 +19,10 @@ Feature: Php-metrics-dashboard features
 
   Scenario: View this report on the web interface
     When I call GET "/"
-    Then the response code should be 200
+    Then The response code should be 200
     And The reponse should contains "List of your scanned projects"
-    # TODO : Finish the scenario
+    And The reponse should contains "sf-bootstrap"
+    When I call GET "/sf-bootstrap"
+    Then The response code should be 200
+    And The reponse should contains "List of reports for the project sf-bootstrap"
+    And The reponse should contains a report link for the actual date
