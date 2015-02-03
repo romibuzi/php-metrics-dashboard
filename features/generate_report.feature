@@ -6,7 +6,7 @@ Feature: Php-metrics-dashboard features
     """
     {
         "sf-bootstrap": {
-            "url": "git@github.com:Romibuzi/sf-bootstrap.git",
+            "url": "https://github.com/romibuzi/sf-bootstrap",
             "excluded-dirs": ["app", "vendor"]
         }
     }
