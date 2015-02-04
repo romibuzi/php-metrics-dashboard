@@ -28,7 +28,7 @@ Feature: Php-metrics-dashboard features
     Then The response code should be 200
     And The reponse should contains "List of your scanned projects"
     And The reponse should contains "sf-bootstrap"
-    And The reponse should contains "projectSNCF"
+    And The reponse should contains "projetSNCF"
     When I call GET "/sf-bootstrap"
     Then The response code should be 200
     And The reponse should contains "List of reports for the project sf-bootstrap"
