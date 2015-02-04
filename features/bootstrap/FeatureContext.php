@@ -70,7 +70,7 @@ class FeatureContext implements Context
     /**
      * @Given I have a config file with content:
      */
-    public function iHaveAConfigFiledWithContent(PyStringNode $content)
+    public function iHaveAConfigFileWithContent(PyStringNode $content)
     {
         file_put_contents($this->app['projects.config_file'], (string) $content);
 
@@ -106,6 +106,16 @@ class FeatureContext implements Context
         $dir = $this->app['projects.source_folder'] . $dir;
 
         Assert::assertEquals('true', exec("cd {$dir} && git rev-parse --is-inside-work-tree"));
+    }
+
+    /**
+     * @Given :name git repository should be at :branch_name branch
+     */
+    public function projectSourceFolderShouldBeAtSpecifiBranch($dir, $branchName)
+    {
+        $dir = $this->app['projects.source_folder'] . $dir;
+
+        Assert::assertEquals($branchName, exec("cd {$dir} && git rev-parse --abbrev-ref HEAD"));
     }
 
     /**

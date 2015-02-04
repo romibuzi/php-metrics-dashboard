@@ -5,6 +5,7 @@
     },
     "projetSNCF": {
         "url": "git@github.com:BuZzi/projetSNCF.git",
+        "branch": "V2",
         "excluded-dirs": ["app", "vendor"]
     }
 }

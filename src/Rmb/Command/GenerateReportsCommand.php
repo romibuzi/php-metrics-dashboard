@@ -129,7 +129,7 @@ class GenerateReportsCommand extends Command
 
                 $output->writeln("<info>Cloning {$projectName} into {$projectSourceFolder} ...</info>");
 
-                $this->wrapper->cloneRepository($projectConfig['url'], $projectSourceFolder);
+                $git = $this->wrapper->cloneRepository($projectConfig['url'], $projectSourceFolder);
 
             } else {
                 // Project was already initialized, so just pull the latest changes
@@ -137,6 +137,11 @@ class GenerateReportsCommand extends Command
 
                 $git = $this->wrapper->init($projectSourceFolder);
                 $git->pull();
+            }
+
+            // Allow to pull specific branch of the project
+            if (isset($projectConfig['branch'])) {
+                $git->checkout($projectConfig['branch']);
             }
 
             // Then run phpmetrics tools on theese projects
