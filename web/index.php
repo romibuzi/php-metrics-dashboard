@@ -1,6 +1,6 @@
 <?php
 
-if (php_sapi_name() === 'cli-server') {
+if (php_sapi_name() === 'cli' || php_sapi_name() === 'cli-server') {
     return false;
 }
 
