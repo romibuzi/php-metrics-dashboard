@@ -59,8 +59,13 @@ class DefaultController
                 $reports[] = new \DateTime($file->getRelativePathname());
             }
 
+            // Get most recent reports in first
+            usort($reports, function ($a, $b) {
+                return $b->format('U') - $a->format('U');
+            });
+
             // Reverse the array to get the most recent reports in first
-            return $this->twig->render('project.twig', ['project' => $project, 'reports' => array_reverse($reports)]);
+            return $this->twig->render('project.twig', ['project' => $project, 'reports' => $reports]);
         } catch (\InvalidArgumentException $e) {
             $this->logger->error($e->getMessage());
 
