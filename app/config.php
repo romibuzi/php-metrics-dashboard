@@ -3,7 +3,7 @@
 $rootDir = dirname(dirname(__FILE__));
 
 $config = [
-    'version' => '0.1',
+    'version' => '0.2',
 
     'root_dir' => $rootDir,
     'debug' => true,

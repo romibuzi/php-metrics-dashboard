@@ -6,17 +6,15 @@
             <h1>PhpMetrics-Dashboard</h1>
         </div>
 
-        <div class="pure-u-1-1">
+        <div class="row">
             <h2>List of your scanned projects :</h2>
-            <ul>
             {% for project in projects %}
-                <li>
-                    <a href="{{ app.url_generator.generate('project_reports_list', {'project': project.getRelativePathname()}) }}">
-                        {{ project.getRelativePathname() }}
-                    </a>
-                </li>
+                <a href="{{ app.url_generator.generate('project_reports_list', {'project': project.getRelativePathname()}) }}">
+                    <div class="col-xs-6 col-md-3 project">
+                        <h3>{{ project.getRelativePathname() }}</h3>
+                    </div>
+                </a>
             {% endfor %}
-            </ul>
         </div>
     </div>
 {% endblock %}
