@@ -36,7 +36,7 @@ class DefaultController
      */
     public function indexAction()
     {
-        $finder = (new Finder())->directories()->in($this->projectsFolder);
+        $finder = (new Finder())->directories()->in($this->projectsFolder)->sortByName();
 
         return $this->twig->render('index.twig', ['projects' => $finder]);
     }
