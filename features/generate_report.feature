@@ -5,8 +5,8 @@ Feature: Php-metrics-dashboard features
     And I have a config file with content:
     """
     {
-        "sf-bootstrap": {
-            "url": "https://github.com/romibuzi/sf-bootstrap",
+        "majordome": {
+            "url": "https://github.com/romibuzi/majordome",
             "excluded-dirs": ["app", "vendor"]
         },
         "projetSNCF": {
@@ -17,19 +17,19 @@ Feature: Php-metrics-dashboard features
     }
     """
     When I run "generate-reports" command
-    Then I should get "sf-bootstrap" directory in projects sources folder
-    And "sf-bootstrap" sources folder should be a git repository
-    Then I should get "sf-bootstrap" directory in projects reports folder
-    And I should get a report file in "sf-bootstrap" reports folder
+    Then I should get "majordome" directory in projects sources folder
+    And "majordome" sources folder should be a git repository
+    Then I should get "majordome" directory in projects reports folder
+    And I should get a report file in "majordome" reports folder
     And "projetSNCF" git repository should be at "V2" branch
 
   Scenario: View theese report on the web interface
     When I call GET "/"
     Then The response code should be 200
     And The reponse should contains "List of your scanned projects"
-    And The reponse should contains "sf-bootstrap"
+    And The reponse should contains "majordome"
     And The reponse should contains "projetSNCF"
-    When I call GET "/sf-bootstrap"
+    When I call GET "/majordome"
     Then The response code should be 200
-    And The reponse should contains "List of reports for the project sf-bootstrap"
+    And The reponse should contains "List of reports for the project majordome"
     And The reponse should contains a report link for the actual date
