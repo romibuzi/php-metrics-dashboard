@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmb\Command;
+namespace PhpMetricsDashboard\Command;
 
 use GitWrapper\Event\GitLoggerListener;
 use GitWrapper\GitWrapper;
@@ -157,13 +157,7 @@ class GenerateReportsCommand extends Command
                 $arguments .= ' --excluded-dirs=' . implode(',', $projectConfig['excluded-dirs']);
             }
 
-            if (defined('HHVM_VERSION')) {
-                $runtime = 'hhvm ';
-            } else {
-                $runtime = 'php ';
-            }
-
-            $process = new Process($runtime . $this->phpmetricsExecutable . $arguments, $this->projectsSourceFolder);
+            $process = new Process('php ' . $this->phpmetricsExecutable . $arguments, $this->projectsSourceFolder);
             $process->setTimeout(600); // Increase the timeout for big git project
             $process->run();
             if (! $process->isSuccessful()) {

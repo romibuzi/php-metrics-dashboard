@@ -3,10 +3,10 @@
 $rootDir = dirname(dirname(__FILE__));
 
 $config = [
-    'version' => '0.2',
+    'version' => '0.3',
 
     'root_dir' => $rootDir,
-    'debug' => true,
+    'debug' => false,
     'monolog.name' => 'php-metrics-dashboard',
     'monolog.level' => \Monolog\Logger::ERROR,
     'monolog.logfile' => __DIR__ . '/logs/app.log',

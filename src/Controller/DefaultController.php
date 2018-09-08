@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmb\Controller;
+namespace PhpMetricsDashboard\Controller;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Finder\Finder;

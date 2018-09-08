@@ -13,7 +13,6 @@ web/reports/*
 !web/reports/.gitkeep
 
 /vendor/
-composer.lock
 
 projects.json
 projects_test.json

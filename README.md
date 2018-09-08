@@ -11,7 +11,7 @@ Getting started
 Requirements :
 
 - Linux or Mac
-- PHP 5.4+
+- PHP 5.6 or 7+
 - Git executable on your machine
 
 Install depedencies via composer :
@@ -34,7 +34,7 @@ Then launch the command which will generate reports (you can put it as a crontas
 
 Reports will be put in `web/reports` folder.
 
-Finally, setup your favorite webserver to point to `web/index.php` file, and you can browse reports of your different projects on the web interface.
+Finally, setup your favorite webserver to point to `web/index.php` file (or `php -S localhost:8000 -t web/`), and you can browse reports of your different projects on the web interface.
 
 
 Thanks

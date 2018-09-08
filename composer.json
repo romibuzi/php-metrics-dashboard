@@ -1,23 +1,27 @@
 {
     "require": {
-        "silex/silex": "~1.2",
-        "twig/twig": "~1.8",
+        "php": ">=5.6",
+        "silex/silex": "2.2.*",
+        "twig/twig": "~1.35",
         "monolog/monolog": "~1.12",
-        "symfony/console": "~2.6",
-        "symfony/filesystem": "~2.6",
-        "symfony/finder": "~2.6",
-        "symfony/process": "~2.6",
-        "cpliakas/git-wrapper": "~1.4"
+        "symfony/debug": "~3.4",
+        "symfony/console": "~3.4",
+        "symfony/filesystem": "~3.4",
+        "symfony/finder": "~3.4",
+        "symfony/process": "~3.4",
+        "symfony/twig-bridge": "~3.4",
+        "cpliakas/git-wrapper": "~1.7"
     },
     "require-dev": {
-        "symfony/browser-kit": "~2.6",
-        "behat/behat": "~3.0@stable",
-        "phpunit/phpunit": "~4.4"
+        "symfony/browser-kit": "~3.4",
+        "symfony/dom-crawler": "~3.4",
+        "behat/behat": "3.4.1",
+        "phpunit/phpunit": "5.6.*"
     },
     "config": {
         "bin-dir": "bin/"
     },
     "autoload": {
-        "psr-0": {"Rmb": "src/"}
+        "psr-4": {"PhpMetricsDashboard\\": "src/"}
     }
 }

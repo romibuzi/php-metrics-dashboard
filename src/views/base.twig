@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <title>PhpMetrics-Dashboard</title>
+    {% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ global.request.basepath }}/css/styles.css"/>
+    {% endblock %}
+</head>
+<body>
+<div class= "container" id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

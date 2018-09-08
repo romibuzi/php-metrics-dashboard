@@ -17,23 +17,16 @@ $app = new Silex\Application($config);
  */
 $app->register(new Silex\Provider\MonologServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), [
-        'twig.path' => __DIR__ . '/../src/Rmb/views',
+        'twig.path' => __DIR__ . '/../src/views',
         'twig.options' => [
+            'debug' => $config['debug'],
             'cache' => __DIR__ . '/cache/twig',
         ]
 ]);
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
-$app['file_system'] = $app->share(
-    function () use ($app) {
-        return new \Symfony\Component\Filesystem\Filesystem();
-    }
-);
-$app['git_wrapper'] = $app->share(
-    function () use ($app) {
-        return new \GitWrapper\GitWrapper();
-    }
-);
+$app['file_system'] = new \Symfony\Component\Filesystem\Filesystem();
+
+$app['git_wrapper'] = new \GitWrapper\GitWrapper();
 
 /**
  * Register controllers as services
@@ -41,10 +34,10 @@ $app['git_wrapper'] = $app->share(
  **/
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 
-$app['default_controller'] = $app->share(
-    function () use ($app) {
-        return new \Rmb\Controller\DefaultController($app['projects.report_folder'], $app['twig'], $app['logger']);
-    }
+$app['default_controller'] = new \PhpMetricsDashboard\Controller\DefaultController(
+    $app['projects.report_folder'],
+    $app['twig'],
+    $app['logger']
 );
 
 // Include routing
